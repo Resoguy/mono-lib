@@ -1,5 +1,5 @@
 {
-	"name": "turborepo-basic-shared",
+	"name": "@resoguy/mono-lib",
 	"version": "1.0.0",
 	"private": true,
 	"workspaces": [
@@ -8,6 +8,7 @@
 	],
 	"scripts": {
 		"build": "turbo run build",
+		"build:ui": "turbo run build --scope=ui --no-deps",
 		"dev": "turbo run dev --parallel",
 		"lint": "turbo run lint",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\""
@@ -19,6 +20,14 @@
 	"engines": {
 		"npm": ">=7.0.0",
 		"node": ">=14.0.0"
+	},
+	"publishConfig": {
+		"@resoguy:registry": "https://npm.pkg.github.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com:resoguy/mono-lib.git",
+		"directory": "packages/ui"
 	},
 	"packageManager": "npm@8.1.2"
 }
