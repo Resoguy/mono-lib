@@ -11,9 +11,11 @@
 		"build:ui": "turbo run build --scope=ui --no-deps",
 		"dev": "turbo run dev --parallel",
 		"lint": "turbo run lint",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\""
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"bootstrap": "npm ci && npx lerna run bootstrap"
 	},
 	"devDependencies": {
+		"lerna": "^4.0.0",
 		"prettier": "^2.5.1",
 		"turbo": "latest"
 	},

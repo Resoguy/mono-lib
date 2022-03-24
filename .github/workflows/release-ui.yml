@@ -17,8 +17,11 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@resoguy'
-      - run: npm ci
+      - run: pwd
+      - run: npm run bootstrap
+      - run: pwd
       - run: npm run build:ui
+      - run: pwd
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
