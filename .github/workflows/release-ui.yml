@@ -19,9 +19,11 @@ jobs:
           scope: '@resoguy'
       - run: pwd
       - run: npm run bootstrap
-      - run: pwd
+      - run: cd ./packages/ui && pwd
+      - run: npm ci
+      - run: cd ../../ && pwd
       - run: npm run build:ui
-      - run: pwd
+      - run: cd ./packages/ui && pwd
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
